@@ -34,8 +34,8 @@ The `Captcha` class loads captcha images from './sampleCaptchas' as training dat
 1. Place your training captcha images in the folder structure:
 ` ./sampleCaptchas/input/*.jpg `
 Each image should have:
-- A corresponding input text file (same filename, `.txt` extension) with pixel and height/width metadata.
-- A corresponding output text file containing the captcha label.
+  - A corresponding input text file (same filename, `.txt` extension) with pixel and height/width metadata.
+  - A corresponding output text file containing the captcha label.
 
 2. Run the script:
 ```bash
