@@ -8,6 +8,8 @@ This repository provides a Python implementation for recognizing captchas by seg
 
 The `Captcha` class loads captcha images from './sampleCaptchas' as training dataset, processes them to extract binary character segments, generates a mapping between these segments and corresponding characters, and finally identifies characters in new captcha images.
 
+The `captcha_analyse.ipynb` jupyter notebook shows the steps of captcha analysis with visualization.
+
 ---
 
 ## Features
