@@ -6,9 +6,9 @@ This repository provides a Python implementation for recognizing captchas by seg
 
 ## Overview
 
-The `Captcha` class loads captcha images from './sampleCaptchas' as training dataset, processes them to extract binary character segments, generates a mapping between these segments and corresponding characters, and finally identifies characters in new captcha images.
+The file `captcha_solver.py` includes `Captcha` class that can load captcha images from `./sampleCaptchas` by default as training dataset and generate a mapping dictionary between character patterns and corresponding characters. You can call `Captcha` class to identify characters in new given captcha images. Output results will be saved as `.txt` file in specified folder or 'output' folder by default.
 
-The `captcha_analyse.ipynb` jupyter notebook shows the steps of captcha analysis with visualization.
+The `captcha_analyse.ipynb` jupyter notebook shows the steps of captcha image analysis with visualization.
 
 ---
 
@@ -25,6 +25,7 @@ The `captcha_analyse.ipynb` jupyter notebook shows the steps of captcha analysis
 ## Requirements
 
 - Python 3.x
+- jupyter notebook
 - OpenCV
 - NumPy
 - matplotlib
@@ -34,16 +35,16 @@ The `captcha_analyse.ipynb` jupyter notebook shows the steps of captcha analysis
 ## Usage
 
 1. Place your training captcha images in the folder structure:
-` ./sampleCaptchas/input/*.jpg `
+` ./your_captcha_dataset/input/*.jpg `
 Each image should have:
-- A corresponding input text file (same filename, `.txt` extension) with pixel and height/width metadata.
-- A corresponding output text file containing the captcha label.
+- A corresponding input text file (same filename, `.txt` extension) with pixel and height/width metadata in same folder.
+- A corresponding output text file containing the captcha label in the folder structure: ` ./your_captcha_dataset/output/*.txt `
 
 2. Run the script:
 ```bash
-python captcha_recognition.py
+python captcha_solver.py
 ```
-Outputs are saved in ./output.
+Outputs are saved in ./output. by default
 
 3. Example
 ```python
@@ -63,7 +64,7 @@ captcha('./sampleCaptchas/input/input00.jpg')
 
 4. The current implementation assumes there is no skew in the structure of the characters.
 
-5. Pixel data must be consistent across all three color channels (R=G=B).
+5. Pixel data must be consistent across all three color channels (B=G=R).
 
 6. More information please refer to `AI Technical test.docx`
 
